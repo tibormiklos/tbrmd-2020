@@ -2,13 +2,9 @@
 @import "normalize";
 @import "reset";
 @import "fonts";
-$base-font-size: 16px; // Your base font-size in pixels
-$em: $base-font-size / 1em;	// Shorthand for outputting ems
 
-$base-line: 1.5*$base-font-size; // 24px
-
-$column: 48px;	// The column-width of your grid in pixels
-$gutter: 24px;	// The gutter-width of your grid in pixels
+$p: 20px; // Your base font-size in pixels
+$lh: $p*2; // 40px
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $sans;
@@ -16,10 +12,16 @@ h1, h2, h3, h4, h5, h6 {
   margin:0;
 }
 
+p {
+  margin:0;
+}
+
 h1 {
-  font-size: 48px;
-  line-height: $base-line*2;
-  margin-bottom: $base-line;
+  $h1: $p*2;
+  font-size: $h1;
+  $h1-lh: $h1*1.25;
+  line-height: $h1-lh;
+  margin-bottom: $h1-lh;
 }
 
 h2 {
@@ -27,9 +29,9 @@ h2 {
 }
 
 p {
-  font-size: $base-font-size;
-  line-height: $base-line;
-  margin-bottom: $base-line;
+  font-size: $p;
+  line-height: $lh;
+  margin-bottom: $lh;
 }
 /* Colours */
 $primary-color: #00f;
@@ -56,8 +58,8 @@ html {
   font-variant: normal;
   font-weight: 500;
   font-stretch: normal;
-  font-size: $base-font-size;
-  line-height: $base-line;
+  font-size: $p;
+  line-height: $lh;
   font-family: $serif;
   color: $primary-color;
 }
@@ -66,7 +68,13 @@ body {
   background: $light;
 }
 
-.container {
+.contained {
   max-width: 800px;
-  margin: 10% auto;
+  margin: 20px auto;
+}
+
+@media (max-width: 800px) {
+  .contained {
+    max-width:600px;
+  }
 }
