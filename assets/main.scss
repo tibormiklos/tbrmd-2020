@@ -1,0 +1,72 @@
+/* Normalise */
+@import "normalize";
+@import "reset";
+@import "fonts";
+$base-font-size: 16px; // Your base font-size in pixels
+$em: $base-font-size / 1em;	// Shorthand for outputting ems
+
+$base-line: 1.5*$base-font-size; // 24px
+
+$column: 48px;	// The column-width of your grid in pixels
+$gutter: 24px;	// The gutter-width of your grid in pixels
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $sans;
+  font-weight: 300;
+  margin:0;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: $base-line*2;
+  margin-bottom: $base-line;
+}
+
+h2 {
+
+}
+
+p {
+  font-size: $base-font-size;
+  line-height: $base-line;
+  margin-bottom: $base-line;
+}
+/* Colours */
+$primary-color: #00f;
+$secondary-color: #fcc;
+$accent-color: #ff0;
+$dark: #333;
+$grey: #aaa;
+$light: #fff;
+
+::selection {
+  background: $accent-color;
+  /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+  background: $accent-color;
+  /* Gecko Browsers */
+}
+// HTML base
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  font-stretch: normal;
+  font-size: $base-font-size;
+  line-height: $base-line;
+  font-family: $serif;
+  color: $primary-color;
+}
+// Body base
+body {
+  background: $light;
+}
+
+.container {
+  max-width: 800px;
+  margin: 10% auto;
+}
