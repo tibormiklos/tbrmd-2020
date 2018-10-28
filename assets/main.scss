@@ -2,9 +2,19 @@
 @import "normalize";
 @import "reset";
 @import "fonts";
+@import "colors";
+
+$border-width: 10px;
 
 $p: 20px; // Your base font-size in pixels
-$lh: $p*2; // 40px
+$lh: $p * 1.5; // 30px
+
+$h1: $p * 3.0517578125;
+$h2: $p * 2.44140625;
+$h3: $p * 1.953125;
+$h4: $p * 1.5625;
+$h5: $p * 1.250;
+$h6: $p * 1;
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $sans;
@@ -17,15 +27,45 @@ p {
 }
 
 h1 {
-  $h1: $p*2;
   font-size: $h1;
-  $h1-lh: $h1*1.25;
+  $h1-lh: $h1 * 1.1250;
   line-height: $h1-lh;
   margin-bottom: $h1-lh;
 }
 
 h2 {
+  font-size: $h2;
+  $h2-lh: $h2 * 1.15625;
+  line-height: $h2-lh;
+  margin-bottom: $h2-lh;
+}
 
+h3 {
+  font-size: $h3;
+  $h3-lh: $h3 * 1.1953125;
+  line-height: $h3-lh;
+  margin-bottom: $h3-lh;
+}
+
+h4 {
+  font-size: $h4;
+  $h4-lh: $h4 * 1.244140625;
+  line-height: $h4-lh;
+  margin-bottom: $h4-lh;
+}
+
+h5 {
+  font-size: $h5;
+  $h5-lh: $h5 * 1.30517578125;
+  line-height: $h5-lh;
+  margin-bottom: $h5-lh;
+}
+
+h6 {
+  font-size: $h6;
+  $h6-lh: $h6 * 1.30;
+  line-height: $h6-lh;
+  margin-bottom: $h6-lh;
 }
 
 p {
@@ -33,13 +73,35 @@ p {
   line-height: $lh;
   margin-bottom: $lh;
 }
-/* Colours */
-$primary-color: #00f;
-$secondary-color: #fcc;
-$accent-color: #ff0;
-$dark: #333;
-$grey: #aaa;
-$light: #fff;
+
+h2.p {
+  font-size: $p;
+  line-height: $lh;
+  margin-bottom: $lh;
+}
+
+blockquote {
+  font-family: $sans;
+  font-size: $h4;
+  $h4-lh: $h4*1.244140625;
+  line-height: $h4-lh;
+  margin-bottom: $h4-lh;
+  padding-left: calc(#{$h4-lh} - #{$border-width});
+  margin-left:0;
+  border-left: $border-width solid;
+}
+
+header {
+  position:fixed;
+  top: 0;
+  left:0;
+}
+
+footer {
+  position:fixed;
+  bottom: 0;
+  left:0;
+}
 
 ::selection {
   background: $accent-color;
@@ -65,16 +127,18 @@ html {
 }
 // Body base
 body {
-  background: $light;
+  background: $bg;
 }
+
 
 .contained {
   max-width: 800px;
-  margin: 20px auto;
+  margin: $lh auto;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-@media (max-width: 800px) {
-  .contained {
-    max-width:600px;
-  }
+.contained > * {
+  // flex: 1 1 250px;
+  margin: $lh
 }
